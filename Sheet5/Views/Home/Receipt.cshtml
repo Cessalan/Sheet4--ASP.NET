@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Receipt";
+}
+
+
+<h2>Receipt</h2>
+<h3> Today's date: @DateTime.Today.ToLongDateString()</h3>
+<p>Type of Sub : @ViewBag.type</p>
+<p>Size of Sub : @ViewBag.size</p>
+<p>Type of Meal Deal : @ViewBag.deal</p>
+<p>Total Price of Sub : @ViewBag.subPrice.ToString("C2")</p>
+<p>Price of Meal Deal : @ViewBag.dealPrice.ToString("C2")</p>
+<br />
+<br />
+<p>Cost : @ViewBag.beforeTax.ToString("C2")</p>
+<p>Tax : @ViewBag.taxAmount.ToString("c2")</p>
+<p>Total Due : @ViewBag.afterTax.ToString("c2")</p>

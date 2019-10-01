@@ -1,0 +1,36 @@
+﻿@using Sheet5.Models
+@model Sheet5.Models.myModel
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div>
+        <h4>Select A Sandwich</h4>
+        @Html.ListBoxFor(x => x.subType, new SelectList(Enum.GetValues(typeof(myModel.SubType))))
+        <h4>Select A Size</h4>
+        @Html.ListBoxFor(x => x.subSize, new SelectList(Enum.GetValues(typeof(myModel.SubSize))))
+
+    </div>
+
+
+    <h4>Select A Meal Deal</h4>
+    @Html.Label("None") @Html.RadioButtonFor(x => x.mealDeals, myModel.Deals.none, new { id = "none", name = "deal", Checked = "checked" })
+    @Html.Label("Drink and Chips") @Html.RadioButtonFor(x => x.mealDeals, myModel.Deals.drinkAndChips, new { id = "chips", name = "deal" })
+    @Html.Label("Drink and Cookies")  @Html.RadioButtonFor(x => x.mealDeals, myModel.Deals.drinkAndCookies, new { id = "cookies", name = "deal" })<br />
+    <input type="submit" value="Place order" />
+
+}
+
+
+
+
+
+
+
+
+
+
+
